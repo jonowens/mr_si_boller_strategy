@@ -88,3 +88,11 @@ class alpaca_trading_connection:
             stop_loss=loss_dict)
         
         return order_res
+
+    def get_all_assets_to_trade(self):
+        
+        # Get all available assets from Alpaca
+        active_assets = self.alpaca_api.list_assets(status='active')
+
+        # Return assets
+        return active_assets
